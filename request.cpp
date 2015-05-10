@@ -4,6 +4,11 @@ using namespace std;
 
 namespace restplus
 {
+	Request::Request(int fd)
+	{
+		
+	}
+
 	string Request::GetPath() const
 	{
 		cout<<"get path"<<endl;

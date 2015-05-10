@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/service.h"
+#include "restplus.h"
 
 using namespace std;
 
@@ -7,12 +7,15 @@ namespace restplus
 {
 	Service::Service()
 	{
-		cout<<"constructor for service"<<endl;
+
 	}
 
 	void Service::Start()
 	{
-		cout<<"start"<<endl;
+		int fd = Platform::ServerSocket();
+		if(fd < 0) return;
+	
+		Platform::DoAccept(fd);	
 	}
 
 	void Service::Stop()
